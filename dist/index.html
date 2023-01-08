@@ -5,24 +5,24 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="main.js" defer></script>
+  <link rel="stylesheet" href="style.css">
   <title>ToDo List</title>
 </head>
-<body class="bg-gray-500 font-sans grid grid-cols-5 grid-rows-none">
-  <div class="col-span-5 bg-blue-200 text-3xl flex align-middle justify-center font-bold p-4">
+<body>
+  <div class="top">
     <h1>My ToDo List</h1>
   </div>
-
-  <div class="bg-slate-200 min-h-screen flex flex-col gap-3 justify-items-center">
-    <div class="text-2xl font-bold justify-center align-middle flex ">
+  <div class="left-side">
+    <div class="home">
       <h2>Home</h2>
     </div>
-    <div class="text-1xl font-bold align-middle flex">
+    <div class="projects-list">
       <h3>Projects</h3>
-      <button class="bg-blue-300 p-1 rounded w-20" type="button">Add Project</button>
+      <button type="button">Add Project</button>
     </div>
   </div>
-  <div class="bg-pink-400 col-span-4 flex flex-col">
-    <div class="justify-center">
+  <div class="right-side">
+    <div class="all-tasks-list">
       <h2 class="all-tasks-header">All Tasks</h2>
       <div class="a-task">
         <h3 class="task-title">Task</h3>
