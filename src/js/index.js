@@ -1,3 +1,9 @@
+// Import our custom CSS
+import "../scss/styles.scss";
+
+// Import all of Bootstrap's JS
+import * as bootstrap from "bootstrap";
+
 class MyToDoItem {
   constructor(title, description, dueDate, complete = false, project = []) {
     this.title = title;
