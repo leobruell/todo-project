@@ -2,7 +2,7 @@
 import "../scss/styles.scss";
 
 // Import all of Bootstrap's JS
-import * as bootstrap from "bootstrap";
+// import * as bootstrap from "bootstrap";
 
 class MyToDoItem {
   constructor(title, description, dueDate, complete = false, project = []) {
@@ -34,6 +34,9 @@ function addTask(event) {
     displayAllTasks();
     const addTaskForm = document.querySelector("#add-class-form");
     addTaskForm.reset();
+    document.querySelector("#Description").removeAttribute("required");
+    document.querySelector("#title").removeAttribute("required");
+    document.querySelector("#Date").removeAttribute("required");
     addTaskForm.classList.add("d-none");
   }
 }
@@ -43,11 +46,13 @@ function displayAllTasks() {
   allTasksList.innerHTML = "";
   myToDoList.forEach((task) => {
     const aTask = document.createElement("div");
-    aTask.innerHTML = `<div class="border border-dark d-flex flex-row justify-content-between ps-4 pe-5 pt-2 mb-3">
+    aTask.innerHTML = `
+    <div class="border border-dark d-flex flex-column flex-md-row  mb-3 align-items-start pt-3 justify-content-around">
+    <input class="read-checkbox" type="checkbox" value="" id="flexCheckDefault">
     <h3 class="task-title">${task.title}</h3>
     <p class="task-description">${task.description}</p>
-    <div class="date-div">
-      <p class="border border-dark p-1">${task.dueDate}</p>
+    <div class="date-div d-flex align-items-center justify-content-center">
+      <p class="border border-dark">${task.dueDate}</p>
     </div>
   </div>`;
     allTasksList.appendChild(aTask);
@@ -61,6 +66,9 @@ function openTaskForm() {
   const cancelTaskButton = document.querySelector(".cancel-task-button");
   cancelTaskButton.addEventListener("click", cancelTaskForm);
   addTaskButton.addEventListener("click", addTask);
+  document.querySelector("#Description").setAttribute("required", true);
+  document.querySelector("#title").setAttribute("required", true);
+  document.querySelector("#Date").setAttribute("required", true);
 }
 
 function cancelTaskForm() {

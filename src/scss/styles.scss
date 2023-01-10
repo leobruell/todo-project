@@ -1,1 +1,42 @@
 @import "~bootstrap/scss/bootstrap";
+
+.read-checkbox{
+    width: 1.5rem;
+    height: 1.5rem;
+    vertical-align: middle;
+    -webkit-appearance: none;
+    border: 0;
+    outline: 0;
+    flex-grow: 0;
+    border-radius: 5%;
+    background-color: #FFFFFF;
+    transition: background 300ms;
+    cursor: pointer;
+
+}
+
+.read-checkbox::before {
+    content: "";
+    color: transparent;
+    display: block;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    border: 0;
+    background-color: white;
+    background-size: contain;
+    border-style: solid;
+    border-width: 2px;
+    background-color: rgb(175, 171, 171);
+  }
+  
+  .read-checkbox:checked::before {
+    box-shadow: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E %3Cpath d='M15.88 8.29L10 14.17l-1.88-1.88a.996.996 0 1 0-1.41 1.41l2.59 2.59c.39.39 1.02.39 1.41 0L17.3 9.7a.996.996 0 0 0 0-1.41c-.39-.39-1.03-.39-1.42 0z' fill='%23fff'/%3E %3C/svg%3E");
+    background-color: green;
+  }
+
+  .read-checkbox:hover{
+    box-shadow: 2px 2px 5px lightblue;
+
+  }
