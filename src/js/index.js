@@ -47,14 +47,15 @@ function displayAllTasks() {
   myToDoList.forEach((task) => {
     const aTask = document.createElement("div");
     aTask.innerHTML = `
-    <div class="border border-dark d-flex flex-column flex-md-row  mb-3 align-items-start pt-3 justify-content-around">
-    <input class="read-checkbox" type="checkbox" value="" id="flexCheckDefault">
-    <h3 class="task-title">${task.title}</h3>
-    <p class="task-description">${task.description}</p>
-    <div class="date-div d-flex align-items-center justify-content-center">
-      <p class="border border-dark">${task.dueDate}</p>
+    <div class="border border-dark d-flex flex-column flex-md-row  mb-3  justify-content-md-between align-items-center p-2 ps-4 pe-4 g-4">
+    <h3 class="text-center">${task.title}</h3>
+    <p class="text-center">${task.description}</p>
+    <div class="date-div d-flex align-items-center justify-content-center col-3">
+      <p class="border border-dark text-center">${task.dueDate}</p>
     </div>
-  </div>`;
+    <button type="button" class="btn btn-secondary">Remove</button>
+  </div>
+    `;
     allTasksList.appendChild(aTask);
   });
 }
