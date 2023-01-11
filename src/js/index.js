@@ -39,6 +39,7 @@ function addTask(event) {
     document.querySelector("#Date").removeAttribute("required");
     addTaskForm.classList.add("d-none");
   }
+  console.log(myToDoList);
 }
 
 function displayAllTasks() {
@@ -57,6 +58,10 @@ function displayAllTasks() {
   </div>
     `;
     allTasksList.appendChild(aTask);
+  });
+  const removeButtons = document.querySelectorAll(".all-tasks-list div button");
+  removeButtons.forEach((button) => {
+    button.addEventListener("click", removeTask);
   });
 }
 
@@ -78,5 +83,22 @@ function cancelTaskForm() {
   addTaskForm.classList.add("d-none");
 }
 
+function removeTask(event) {
+  const taskDiv = event.target.parentElement;
+  const taskName = taskDiv.querySelector("h3").textContent;
+  console.log(myToDoList);
+  for (let i = 0; i < myToDoList.length; i++) {
+    if (myToDoList[i].title == taskName) {
+      myToDoList.splice(i, 1);
+    }
+  }
+  console.log(myToDoList);
+  event.target.parentElement.remove();
+}
+
 const openTaskButton = document.querySelector(".open-task-form-button");
 openTaskButton.addEventListener("click", openTaskForm);
+
+const removeButton = document.querySelector(".all-tasks-list div button");
+removeButton.addEventListener("click", removeTask);
+console.log(removeButton);
